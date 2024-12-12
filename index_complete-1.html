@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narzissmus Support App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Home Screen -->
+        <div id="home-screen" class="screen active">
+            <h1>Willkommen</h1>
+            <p>Gaslighting und narzisstische Gewalt können jede*n treffen. Aber ich bin hier, um zu sagen: Es ist möglich, sich daraus zu befreien.</p>
+            <button onclick="navigateTo('journal-screen')">Tagebuch</button>
+            <button onclick="navigateTo('articles-screen')">Artikel</button>
+            <button onclick="navigateTo('resources-screen')">Ressourcen</button>
+        </div>
+
+        <!-- Journal Screen -->
+        <div id="journal-screen" class="screen hidden">
+            <h1>Tagebuch</h1>
+            <textarea id="journal-entry" placeholder="Schreib etwas..."></textarea>
+            <button onclick="saveEntry()">Speichern</button>
+            <div id="journal-entries"></div>
+            <button onclick="navigateTo('home-screen')">Zurück</button>
+        </div>
+
+        <!-- Articles Screen -->
+        <div id="articles-screen" class="screen hidden">
+            <h1>Artikel</h1>
+            <ul id="articles-list"></ul>
+            <button onclick="navigateTo('home-screen')">Zurück</button>
+        </div>
+
+        <!-- Article Detail Screen -->
+        <div id="article-detail-screen" class="screen hidden">
+            <h1 id="article-title"></h1>
+            <p id="article-content"></p>
+            <button onclick="navigateTo('articles-screen')">Zurück</button>
+        </div>
+
+        <!-- Resources Screen -->
+        <div id="resources-screen" class="screen hidden">
+            <h1>Ressourcen</h1>
+            <ul id="resources-list"></ul>
+            <button onclick="navigateTo('home-screen')">Zurück</button>
+        </div>
+    </div>
+</body>
+</html>
